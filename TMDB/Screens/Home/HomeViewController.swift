@@ -7,6 +7,5 @@
 
 import Foundation
 
-class HomeViewController {
-    
+class HomeViewController: BaseVC {
 }

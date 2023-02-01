@@ -18,6 +18,9 @@
 		5B94FE21298AE7430078FD05 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE20298AE7430078FD05 /* APIService.swift */; };
 		5B94FE23298AE7D50078FD05 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */; };
 		5B94FE25298AE9310078FD05 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE24298AE9310078FD05 /* Reachability.swift */; };
+		5B94FE28298AEB580078FD05 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE27298AEB580078FD05 /* SplashViewController.swift */; };
+		5B94FE2B298AEDED0078FD05 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE2A298AEDED0078FD05 /* BaseVC.swift */; };
+		5B94FE2D298AEF7E0078FD05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE2C298AEF7E0078FD05 /* Constants.swift */; };
 		5BEB4F5F298AA9A600C35C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */; };
 		5BEB4F68298AA9A700C35C43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F67298AA9A700C35C43 /* Assets.xcassets */; };
 		5BEB4F6B298AA9A700C35C43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F69298AA9A700C35C43 /* LaunchScreen.storyboard */; };
@@ -38,6 +41,9 @@
 		5B94FE20298AE7430078FD05 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5B94FE24298AE9310078FD05 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		5B94FE27298AEB580078FD05 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		5B94FE2A298AEDED0078FD05 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		5B94FE2C298AEF7E0078FD05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5BEB4F5B298AA9A600C35C43 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BEB4F67298AA9A700C35C43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 		5B94FE03298AAD570078FD05 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5B94FE26298AEB300078FD05 /* Splash */,
 				5B94FE07298AAF160078FD05 /* Home */,
 				5B94FE08298AAF290078FD05 /* Detail */,
 			);
@@ -89,7 +96,9 @@
 		5B94FE05298AAD6F0078FD05 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5B94FE29298AEDE10078FD05 /* Base */,
 				5B94FE24298AE9310078FD05 /* Reachability.swift */,
+				5B94FE2C298AEF7E0078FD05 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -139,6 +148,22 @@
 				5B94FE18298AB1ED0078FD05 /* ShowDetailResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5B94FE26298AEB300078FD05 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE27298AEB580078FD05 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		5B94FE29298AEDE10078FD05 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE2A298AEDED0078FD05 /* BaseVC.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		5BEB4F52298AA9A600C35C43 = {
@@ -298,7 +323,10 @@
 				5B94FE25298AE9310078FD05 /* Reachability.swift in Sources */,
 				5BEB4F5F298AA9A600C35C43 /* AppDelegate.swift in Sources */,
 				5B94FE1F298AE73C0078FD05 /* APIError.swift in Sources */,
+				5B94FE2D298AEF7E0078FD05 /* Constants.swift in Sources */,
+				5B94FE2B298AEDED0078FD05 /* BaseVC.swift in Sources */,
 				5B94FE21298AE7430078FD05 /* APIService.swift in Sources */,
+				5B94FE28298AEB580078FD05 /* SplashViewController.swift in Sources */,
 				5B94FE0A298AAF4D0078FD05 /* HomeViewController.swift in Sources */,
 				5B94FE19298AB1ED0078FD05 /* ShowDetailResponseModel.swift in Sources */,
 				5B94FE1B298AE6FF0078FD05 /* APIConstants.swift in Sources */,

@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum APIError {
+    case noConnection
+
+    var errorDescription: String {
+        switch self {
+        case .noConnection:
+            return "Check your connection"
+        }
+    }
+}
