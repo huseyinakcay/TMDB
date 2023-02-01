@@ -17,6 +17,7 @@
 		5B94FE1F298AE73C0078FD05 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE1E298AE73C0078FD05 /* APIError.swift */; };
 		5B94FE21298AE7430078FD05 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE20298AE7430078FD05 /* APIService.swift */; };
 		5B94FE23298AE7D50078FD05 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */; };
+		5B94FE25298AE9310078FD05 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE24298AE9310078FD05 /* Reachability.swift */; };
 		5BEB4F5F298AA9A600C35C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */; };
 		5BEB4F68298AA9A700C35C43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F67298AA9A700C35C43 /* Assets.xcassets */; };
 		5BEB4F6B298AA9A700C35C43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F69298AA9A700C35C43 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		5B94FE1E298AE73C0078FD05 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5B94FE20298AE7430078FD05 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		5B94FE24298AE9310078FD05 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5BEB4F5B298AA9A600C35C43 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BEB4F67298AA9A700C35C43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		5B94FE05298AAD6F0078FD05 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5B94FE24298AE9310078FD05 /* Reachability.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				5B94FE0F298AAFBC0078FD05 /* DetailViewController.swift in Sources */,
 				5B94FE1D298AE70B0078FD05 /* APIEndpoint.swift in Sources */,
+				5B94FE25298AE9310078FD05 /* Reachability.swift in Sources */,
 				5BEB4F5F298AA9A600C35C43 /* AppDelegate.swift in Sources */,
 				5B94FE1F298AE73C0078FD05 /* APIError.swift in Sources */,
 				5B94FE21298AE7430078FD05 /* APIService.swift in Sources */,
