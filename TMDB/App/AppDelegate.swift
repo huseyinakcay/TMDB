@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,13 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+
+        configureSkeletonView()
+
         let navigationController = UINavigationController(rootViewController: SplashViewController())
-        
+        configureWindow(navigationController: navigationController)
+
+        return true
+    }
+
+    private func configureSkeletonView() {
+        SkeletonAppearance.default.multilineHeight = 20
+        SkeletonAppearance.default.multilineCornerRadius = 10
+        SkeletonAppearance.default.tintColor = .red.withAlphaComponent(0.7)
+    }
+
+    private func configureWindow(navigationController: UINavigationController) {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-
-        return true
     }
 
 }
