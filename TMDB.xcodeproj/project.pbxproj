@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B94FE0A298AAF4D0078FD05 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE09298AAF4D0078FD05 /* HomeViewController.swift */; };
+		5B94FE0F298AAFBC0078FD05 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE0E298AAFBC0078FD05 /* DetailViewController.swift */; };
+		5B94FE13298AAFD30078FD05 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE12298AAFD30078FD05 /* HomeViewModel.swift */; };
+		5B94FE17298AB1E00078FD05 /* PopularShowsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE16298AB1E00078FD05 /* PopularShowsResponseModel.swift */; };
+		5B94FE19298AB1ED0078FD05 /* ShowDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE18298AB1ED0078FD05 /* ShowDetailResponseModel.swift */; };
+		5B94FE1B298AE6FF0078FD05 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE1A298AE6FF0078FD05 /* APIConstants.swift */; };
+		5B94FE1D298AE70B0078FD05 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE1C298AE70B0078FD05 /* APIEndpoint.swift */; };
+		5B94FE1F298AE73C0078FD05 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE1E298AE73C0078FD05 /* APIError.swift */; };
+		5B94FE21298AE7430078FD05 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE20298AE7430078FD05 /* APIService.swift */; };
+		5B94FE23298AE7D50078FD05 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */; };
 		5BEB4F5F298AA9A600C35C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */; };
-		5BEB4F61298AA9A600C35C43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB4F60298AA9A600C35C43 /* SceneDelegate.swift */; };
-		5BEB4F63298AA9A600C35C43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB4F62298AA9A600C35C43 /* ViewController.swift */; };
-		5BEB4F66298AA9A600C35C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F64298AA9A600C35C43 /* Main.storyboard */; };
 		5BEB4F68298AA9A700C35C43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F67298AA9A700C35C43 /* Assets.xcassets */; };
 		5BEB4F6B298AA9A700C35C43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB4F69298AA9A700C35C43 /* LaunchScreen.storyboard */; };
+		9E8F281101C703D8D4EB13FA /* Pods_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C324474A045C2EF7CB341F1 /* Pods_TMDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1B27C72A121D4709B4AD1C /* Pods-TMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB.release.xcconfig"; path = "Target Support Files/Pods-TMDB/Pods-TMDB.release.xcconfig"; sourceTree = "<group>"; };
+		4EC1320676EBA400E00E759B /* Pods-TMDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB.debug.xcconfig"; path = "Target Support Files/Pods-TMDB/Pods-TMDB.debug.xcconfig"; sourceTree = "<group>"; };
+		5B94FE09298AAF4D0078FD05 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5B94FE0E298AAFBC0078FD05 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5B94FE12298AAFD30078FD05 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5B94FE16298AB1E00078FD05 /* PopularShowsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularShowsResponseModel.swift; sourceTree = "<group>"; };
+		5B94FE18298AB1ED0078FD05 /* ShowDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailResponseModel.swift; sourceTree = "<group>"; };
+		5B94FE1A298AE6FF0078FD05 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		5B94FE1C298AE70B0078FD05 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		5B94FE1E298AE73C0078FD05 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		5B94FE20298AE7430078FD05 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5BEB4F5B298AA9A600C35C43 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BEB4F60298AA9A600C35C43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BEB4F62298AA9A600C35C43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5BEB4F65298AA9A600C35C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BEB4F67298AA9A700C35C43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BEB4F6A298AA9A700C35C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BEB4F6C298AA9A700C35C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C324474A045C2EF7CB341F1 /* Pods_TMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,102 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E8F281101C703D8D4EB13FA /* Pods_TMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1988D95EE6E1FE313ABB35E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EC1320676EBA400E00E759B /* Pods-TMDB.debug.xcconfig */,
+				2B1B27C72A121D4709B4AD1C /* Pods-TMDB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5B94FE03298AAD570078FD05 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE07298AAF160078FD05 /* Home */,
+				5B94FE08298AAF290078FD05 /* Detail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5B94FE04298AAD6A0078FD05 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5BEB4F69298AA9A700C35C43 /* LaunchScreen.storyboard */,
+				5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */,
+				5BEB4F6C298AA9A700C35C43 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5B94FE05298AAD6F0078FD05 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5B94FE06298AAD7C0078FD05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BEB4F67298AA9A700C35C43 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B94FE07298AAF160078FD05 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE09298AAF4D0078FD05 /* HomeViewController.swift */,
+				5B94FE12298AAFD30078FD05 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5B94FE08298AAF290078FD05 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE0E298AAFBC0078FD05 /* DetailViewController.swift */,
+				5B94FE22298AE7D50078FD05 /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5B94FE14298AB0EB0078FD05 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE15298AB1490078FD05 /* Models */,
+				5B94FE1A298AE6FF0078FD05 /* APIConstants.swift */,
+				5B94FE1C298AE70B0078FD05 /* APIEndpoint.swift */,
+				5B94FE1E298AE73C0078FD05 /* APIError.swift */,
+				5B94FE20298AE7430078FD05 /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5B94FE15298AB1490078FD05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B94FE16298AB1E00078FD05 /* PopularShowsResponseModel.swift */,
+				5B94FE18298AB1ED0078FD05 /* ShowDetailResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5BEB4F52298AA9A600C35C43 = {
 			isa = PBXGroup;
 			children = (
 				5BEB4F5D298AA9A600C35C43 /* TMDB */,
 				5BEB4F5C298AA9A600C35C43 /* Products */,
+				1988D95EE6E1FE313ABB35E2 /* Pods */,
+				BAD8079AFF28C296F455F52D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +159,21 @@
 		5BEB4F5D298AA9A600C35C43 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
-				5BEB4F5E298AA9A600C35C43 /* AppDelegate.swift */,
-				5BEB4F60298AA9A600C35C43 /* SceneDelegate.swift */,
-				5BEB4F62298AA9A600C35C43 /* ViewController.swift */,
-				5BEB4F64298AA9A600C35C43 /* Main.storyboard */,
-				5BEB4F67298AA9A700C35C43 /* Assets.xcassets */,
-				5BEB4F69298AA9A700C35C43 /* LaunchScreen.storyboard */,
-				5BEB4F6C298AA9A700C35C43 /* Info.plist */,
+				5B94FE04298AAD6A0078FD05 /* App */,
+				5B94FE05298AAD6F0078FD05 /* Helpers */,
+				5B94FE14298AB0EB0078FD05 /* Networking */,
+				5B94FE06298AAD7C0078FD05 /* Resources */,
+				5B94FE03298AAD570078FD05 /* Screens */,
 			);
 			path = TMDB;
+			sourceTree = "<group>";
+		};
+		BAD8079AFF28C296F455F52D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C324474A045C2EF7CB341F1 /* Pods_TMDB.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BEB4F6F298AA9A700C35C43 /* Build configuration list for PBXNativeTarget "TMDB" */;
 			buildPhases = (
+				68D5DF0DEE6BA4056CDA270C /* [CP] Check Pods Manifest.lock */,
 				5BEB4F57298AA9A600C35C43 /* Sources */,
 				5BEB4F58298AA9A600C35C43 /* Frameworks */,
 				5BEB4F59298AA9A600C35C43 /* Resources */,
+				F59F217F6F6E71708BA90F92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +238,75 @@
 			files = (
 				5BEB4F6B298AA9A700C35C43 /* LaunchScreen.storyboard in Resources */,
 				5BEB4F68298AA9A700C35C43 /* Assets.xcassets in Resources */,
-				5BEB4F66298AA9A600C35C43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68D5DF0DEE6BA4056CDA270C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TMDB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F59F217F6F6E71708BA90F92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BEB4F57298AA9A600C35C43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BEB4F63298AA9A600C35C43 /* ViewController.swift in Sources */,
+				5B94FE0F298AAFBC0078FD05 /* DetailViewController.swift in Sources */,
+				5B94FE1D298AE70B0078FD05 /* APIEndpoint.swift in Sources */,
 				5BEB4F5F298AA9A600C35C43 /* AppDelegate.swift in Sources */,
-				5BEB4F61298AA9A600C35C43 /* SceneDelegate.swift in Sources */,
+				5B94FE1F298AE73C0078FD05 /* APIError.swift in Sources */,
+				5B94FE21298AE7430078FD05 /* APIService.swift in Sources */,
+				5B94FE0A298AAF4D0078FD05 /* HomeViewController.swift in Sources */,
+				5B94FE19298AB1ED0078FD05 /* ShowDetailResponseModel.swift in Sources */,
+				5B94FE1B298AE6FF0078FD05 /* APIConstants.swift in Sources */,
+				5B94FE13298AAFD30078FD05 /* HomeViewModel.swift in Sources */,
+				5B94FE23298AE7D50078FD05 /* DetailViewModel.swift in Sources */,
+				5B94FE17298AB1E00078FD05 /* PopularShowsResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5BEB4F64298AA9A600C35C43 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BEB4F65298AA9A600C35C43 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5BEB4F69298AA9A700C35C43 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +434,7 @@
 		};
 		5BEB4F70298AA9A700C35C43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EC1320676EBA400E00E759B /* Pods-TMDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,7 +444,6 @@
 				INFOPLIST_FILE = TMDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +461,7 @@
 		};
 		5BEB4F71298AA9A700C35C43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B1B27C72A121D4709B4AD1C /* Pods-TMDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,7 +471,6 @@
 				INFOPLIST_FILE = TMDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
