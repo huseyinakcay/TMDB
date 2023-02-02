@@ -9,7 +9,6 @@ target 'TMDB' do
 
     pod 'Alamofire'
     pod 'Kingfisher'
-    pod 'SkeletonView'
     pod 'SnapKit'
 
 end
