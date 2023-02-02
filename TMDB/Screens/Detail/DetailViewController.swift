@@ -7,6 +7,5 @@
 
 import Foundation
 
-class DetailViewController {
-    
+class DetailViewController: BaseVC {
 }

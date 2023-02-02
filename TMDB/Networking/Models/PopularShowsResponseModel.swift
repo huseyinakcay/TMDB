@@ -8,12 +8,10 @@
 import Foundation
 
 struct PopularShowsResponseModel: Codable {
-    let page: Int?
     let results: [Results]?
     let totalPages: Int?
 
     enum CodingKeys: String, CodingKey {
-        case page
         case results
         case totalPages = "total_pages"
     }

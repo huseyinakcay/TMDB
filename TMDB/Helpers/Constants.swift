@@ -27,7 +27,8 @@ enum Constants {
     }
 
     enum Home {
-
+        static let home = "HOME"
+        static let homeCvCell = "HomeVcCollectionViewCell"
     }
 
     enum Detail {

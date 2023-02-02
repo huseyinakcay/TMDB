@@ -95,7 +95,7 @@ class SplashViewController: BaseVC {
     }
 
     private func navigateToHome() {
-        let viewController = HomeViewController()
+        let viewController = HomeViewController(viewModel: HomeViewModel())
         navigationController?.setViewControllers([viewController], animated: true)
     }
 }

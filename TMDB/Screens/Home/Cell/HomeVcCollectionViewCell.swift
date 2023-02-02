@@ -40,7 +40,6 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
     lazy private var movieImageView: UIImageView = {
         let view = UIImageView(image: nil)
         view.contentMode = .scaleToFill
-        view.isSkeletonable = true
         return view
     }()
 
@@ -50,6 +49,7 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.isHidden = true
         return label
     }()
 
@@ -81,7 +81,7 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
     }
 
     //MARK: - Methods
-    func setCell(model: Results?) {
+    func setCell(with model: Results?) {
         let url = "https://image.tmdb.org/t/p/w500" + (model?.posterPath ?? "")
         DispatchQueue.main.async {
             self.movieImageView.kf.setImage(

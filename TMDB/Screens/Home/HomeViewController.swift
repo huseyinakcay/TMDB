@@ -10,37 +10,53 @@ import SnapKit
 
 class HomeViewController: BaseVC {
     //MARK: - Properties
-    var model: [Results] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    var viewModel: HomeViewModel?
+    let constants = Constants.Home.self
 
     //MARK: - UI Components
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
-        let collView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collView.register(HomeVcCollectionViewCell.self, forCellWithReuseIdentifier: "HomeVcCollectionViewCell")
+        let collView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
+        collView.register(
+            HomeVcCollectionViewCell.self,
+            forCellWithReuseIdentifier: constants.homeCvCell
+        )
         collView.showsVerticalScrollIndicator = false
         collView.showsHorizontalScrollIndicator = false
-        collView.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 20, right: 20)
+        collView.contentInset = UIEdgeInsets(
+            top: 10,
+            left: 20,
+            bottom: 20,
+            right: 20
+        )
         collView.delegate = self
         collView.dataSource = self
         collView.backgroundColor = .black
         collView.backgroundView?.isHidden = true
+        collView.bounces = false
         return collView
     }()
 
-    var page = 1
     //MARK: - Lifecycle
+    init(viewModel: HomeViewModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "TMDB"
-
-        fetchMovies(page: page)
+        configureNavBar()
+        fetchMovies()
     }
 
     //MARK: - Configure UI
@@ -55,49 +71,87 @@ class HomeViewController: BaseVC {
         }
     }
 
+    private func configureNavBar() {
+        title = constants.home
+    }
+
     //MARK: - Methods
-    func fetchMovies(page: Int) {
-        APIService.request(router: TvShowsEndpoint.popularShows(page: page)) { (response: PopularShowsResponseModel?, error: String?) in
-            self.model += response?.results ?? []
-            self.page += 1
-        } onFailure: { (errorDescription, networkErrorType) in
-            print("fail")
+    private func fetchMovies() {
+        viewModel?.fetchMovies { [weak self] (firstIndex, endIndex) in
+            guard let self = self else { return }
+            for item in firstIndex...endIndex {
+                self.collectionView.reloadItems(at: [IndexPath(
+                    item: item,
+                    section: .zero
+                )])
+            }
+        } onFailure: { [weak self] (errorDescription, networkError) in
+            guard let self = self else { return }
+            self.showAlert(
+                title: commonError,
+                message: errorDescription ?? APIError.unknownError.errorDescription
+            )
         }
+
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeVcCollectionViewCell", for: indexPath) as! HomeVcCollectionViewCell
-        cell.setCell(model: model[indexPath.row])
+//MARK: - UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: constants.homeCvCell,
+            for: indexPath
+        ) as? HomeVcCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.setCell(with: viewModel?.results[indexPath.item])
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
+        return viewModel?.results.count ?? 0
+    }
+}
+
+//MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        guard let navigationController = navigationController else {
+            return
+        }
+        let detailVc = DetailViewController()
+        navigationController.pushViewController(detailVc, animated: true)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let width: CGFloat = (UIScreen.main.bounds.width - 60) / 2
         let height: CGFloat = width * 1.5
         return CGSize(width: width, height: height)
     }
 
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    }
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if !model.isEmpty {
+        if !(viewModel?.results.isEmpty ?? true) {
             let currentOffset = scrollView.contentOffset.y
             let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
-            if maximumOffset - currentOffset <= 200.0 {
-                self.fetchMovies(page: page)
+            if maximumOffset - currentOffset <= 300.0 &&
+                !(viewModel?.isLastPage ?? true) {
+                self.fetchMovies()
             }
         }
     }
-
 }
