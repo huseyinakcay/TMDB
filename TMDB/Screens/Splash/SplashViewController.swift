@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 
 class SplashViewController: BaseVC {
-//MARK: - Properties
+    //MARK: - Properties
     private let constants = Constants.Splash.self
 
-//MARK: - UI Components
+    //MARK: - UI Components
     lazy private var welcomeLabelContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -39,18 +39,20 @@ class SplashViewController: BaseVC {
         return imageView
     }()
 
-//MARK: - ViewDidLoad
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Delay is not needed but i wanted to show splash for 1 sec.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.checkConnection()
-        }
+//        }
     }
 
-//MARK: - Configure UI
+    //MARK: - Configure UI
     override func setupViews() {
+        super.setupViews()
+
         view.addSubview(welcomeLabelContainerView)
         welcomeLabelContainerView.addSubview(welcomeLabel)
         view.addSubview(splashImageContainerView)
@@ -58,6 +60,8 @@ class SplashViewController: BaseVC {
     }
 
     override func setupLayout() {
+        super.setupLayout()
+        
         welcomeLabelContainerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
@@ -76,7 +80,7 @@ class SplashViewController: BaseVC {
         }
     }
 
-//MARK: - Methods
+    //MARK: - Methods
     private func checkConnection() {
         if Reachability.isConnectedToNetwork() {
             navigateToHome()

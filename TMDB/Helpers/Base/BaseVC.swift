@@ -14,9 +14,14 @@ class BaseVC: UIViewController {
 
         setupViews()
         setupLayout()
+        changeNavBarFont()
     }
 
-    func showAlert(title: String, message: String, completion: @escaping () -> Void) {
+    final func showAlert(
+        title: String,
+        message: String,
+        completion: @escaping () -> Void
+    ) {
         let alertController = UIAlertController(
             title: title,
             message: message,
@@ -37,9 +42,10 @@ class BaseVC: UIViewController {
         }
     }
 
-}
-
-extension BaseVC {
-    @objc open func setupViews() {}
-    @objc open func setupLayout() {}
+    func setupViews() {}
+    func setupLayout() {}
+    func changeNavBarFont() {
+        navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.font: UIFont(name: customFont, size: 20)!]
+    }
 }
