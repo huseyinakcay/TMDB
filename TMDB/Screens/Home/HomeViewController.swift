@@ -7,10 +7,14 @@
 
 import UIKit
 import SnapKit
-import SkeletonView
 
 class HomeViewController: BaseVC {
     //MARK: - Properties
+    var model: [Results] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     //MARK: - UI Components
     lazy var collectionView: UICollectionView = {
@@ -29,12 +33,14 @@ class HomeViewController: BaseVC {
         return collView
     }()
 
-    var test = false
+    var page = 1
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "TMDB"
+
+        fetchMovies(page: page)
     }
 
     //MARK: - Configure UI
@@ -50,23 +56,25 @@ class HomeViewController: BaseVC {
     }
 
     //MARK: - Methods
+    func fetchMovies(page: Int) {
+        APIService.request(router: TvShowsEndpoint.popularShows(page: page)) { (response: PopularShowsResponseModel?, error: String?) in
+            self.model += response?.results ?? []
+            self.page += 1
+        } onFailure: { (errorDescription, networkErrorType) in
+            print("fail")
+        }
+    }
 }
 
-extension HomeViewController: SkeletonCollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
-        "HomeVcCollectionViewCell"
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeVcCollectionViewCell", for: indexPath) as! HomeVcCollectionViewCell
+        cell.setCell(model: model[indexPath.row])
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeVcCollectionViewCell", for: indexPath) as! HomeVcCollectionViewCell
-        if test {
-            cell.setCell()
-        }
-        return cell
+        return model.count
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -78,7 +86,18 @@ extension HomeViewController: SkeletonCollectionViewDataSource, UICollectionView
         return CGSize(width: width, height: height)
     }
 
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    }
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !model.isEmpty {
+            let currentOffset = scrollView.contentOffset.y
+            let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+            if maximumOffset - currentOffset <= 200.0 {
+                self.fetchMovies(page: page)
+            }
+        }
     }
 
 }

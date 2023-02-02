@@ -46,6 +46,6 @@ class BaseVC: UIViewController {
     func setupLayout() {}
     func changeNavBarFont() {
         navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.font: UIFont(name: customFont, size: 20)!]
+        [NSAttributedString.Key.font: UIFont(name: commonFont, size: 20)!]
     }
 }

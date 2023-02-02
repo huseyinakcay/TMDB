@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeVcCollectionViewCell: BaseCollectionViewCell {
     //MARK: - UI Components
@@ -45,8 +46,7 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
 
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
-        label.isSkeletonable = true
-        label.font = UIFont(name: customFont, size: 16)
+        label.font = UIFont(name: commonFont, size: 16)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -81,8 +81,24 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
     }
 
     //MARK: - Methods
-    func setCell() {
-        movieImageView.image = Images.splashLogo.image
+    func setCell(model: Results?) {
+        let url = "https://image.tmdb.org/t/p/w500" + (model?.posterPath ?? "")
+        DispatchQueue.main.async {
+            self.movieImageView.kf.setImage(
+                with: URL(string: url),
+                placeholder: nil,
+                options: [.cacheOriginalImage],
+                progressBlock: nil
+            ) { result in
+                switch result {
+                case .success(_):
+                    self.titleLabel.isHidden = true
+                case .failure(_):
+                    self.titleLabel.isHidden = false
+                    self.titleLabel.text = model?.name
+                }
+            }
+        }
     }
     
 }

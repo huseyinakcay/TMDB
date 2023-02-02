@@ -7,9 +7,11 @@
 
 import UIKit
 
-public let customFont = "Baskerville"
+public let commonFont = "Baskerville"
 public let commonError = "Error"
 public let commonOk = "OK"
+public let popular = "popular"
+public let language = "en-US"
 
 enum Images: String {
     case splashLogo = "SplashLogo"

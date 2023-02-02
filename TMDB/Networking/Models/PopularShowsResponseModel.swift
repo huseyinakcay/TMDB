@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+struct PopularShowsResponseModel: Codable {
+    let page: Int?
+    let results: [Results]?
+    let totalPages: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case page
+        case results
+        case totalPages = "total_pages"
+    }
+}
+
+struct Results: Codable {
+    let name: String?
+    let posterPath: String?
+    let voteAverage: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case posterPath = "poster_path"
+        case voteAverage = "vote_average"
+    }
+}

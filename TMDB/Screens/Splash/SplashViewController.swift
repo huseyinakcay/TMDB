@@ -22,7 +22,7 @@ class SplashViewController: BaseVC {
     lazy private var welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = constants.welcome
-        label.font = UIFont(name: customFont, size: 48)
+        label.font = UIFont(name: commonFont, size: 48)
         return label
     }()
 
