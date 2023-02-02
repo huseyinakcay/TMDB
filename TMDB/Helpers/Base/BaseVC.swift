@@ -20,7 +20,7 @@ class BaseVC: UIViewController {
     final func showAlert(
         title: String,
         message: String,
-        completion: @escaping () -> Void
+        completion: (() -> Void)? = nil
     ) {
         let alertController = UIAlertController(
             title: title,
@@ -31,7 +31,7 @@ class BaseVC: UIViewController {
             title: commonOk,
             style: .destructive
         ) { _ in
-            completion()
+            completion?()
         }
         alertController.addAction(alertAction)
         DispatchQueue.main.async {
