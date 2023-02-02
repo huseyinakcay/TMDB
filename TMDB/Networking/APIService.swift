@@ -67,11 +67,11 @@ class APIService {
             case 200..<300:
                 onSuccess(baseData, consumerErrorMessage)
             default:
-                onFailure(response.error?.errorDescription, .noConnection)
+                onFailure(response.error?.errorDescription, .unknownError)
             }
         case .failure:
-            if !Reachability.isConnectedToNetwork() {
-                onFailure(consumerErrorMessage, .noConnection)
+            if Reachability.isConnectedToNetwork() {
+                onFailure(consumerErrorMessage, .unknownError)
             } else {
                 onFailure(consumerErrorMessage, .noConnection)
             }

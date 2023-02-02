@@ -9,11 +9,14 @@ import Foundation
 
 enum APIError {
     case noConnection
+    case unknownError
 
     var errorDescription: String {
         switch self {
         case .noConnection:
             return "Check your connection"
+        case .unknownError:
+            return "Something went wrong"
         }
     }
 }
