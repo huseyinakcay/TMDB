@@ -8,16 +8,17 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: BaseVC {
+final class HomeViewController: BaseVC {
     //MARK: - Properties
-    var viewModel: HomeViewModel?
-    let constants = Constants.Home.self
+    private var viewModel: HomeViewModel?
+    private let constants = Constants.Home.self
+    private let spacing: CGFloat = 20
 
     //MARK: - UI Components
-    lazy var collectionView: UICollectionView = {
+    lazy private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 20
+        layout.minimumLineSpacing = spacing
         let collView = UICollectionView(
             frame: .zero,
             collectionViewLayout: layout
@@ -29,10 +30,10 @@ class HomeViewController: BaseVC {
         collView.showsVerticalScrollIndicator = false
         collView.showsHorizontalScrollIndicator = false
         collView.contentInset = UIEdgeInsets(
-            top: 10,
-            left: 20,
-            bottom: 20,
-            right: 20
+            top: spacing,
+            left: spacing,
+            bottom: spacing,
+            right: spacing
         )
         collView.delegate = self
         collView.dataSource = self
@@ -67,7 +68,6 @@ class HomeViewController: BaseVC {
     override func setupLayout() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.height.equalTo((UIScreen.main.bounds.width - 60) / 2 * 1.5)
         }
     }
 
@@ -138,7 +138,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let width: CGFloat = (UIScreen.main.bounds.width - 60) / 2
+        let width: CGFloat = (UIScreen.main.bounds.width - spacing * 3) / 2
         let height: CGFloat = width * 1.5
         return CGSize(width: width, height: height)
     }

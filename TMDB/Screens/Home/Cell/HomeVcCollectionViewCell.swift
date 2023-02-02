@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class HomeVcCollectionViewCell: BaseCollectionViewCell {
+final class HomeVcCollectionViewCell: BaseCollectionViewCell {
     //MARK: - UI Components
     lazy private var movieContainerView: UIView = {
         let view = UIView()
@@ -48,7 +48,7 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
         label.font = UIFont(name: commonFont, size: 16)
         label.textColor = .white
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.numberOfLines = .zero
         label.isHidden = true
         return label
     }()
@@ -82,8 +82,13 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
 
     //MARK: - Methods
     func setCell(with model: Results?) {
-        let url = "https://image.tmdb.org/t/p/w500" + (model?.posterPath ?? "")
-        DispatchQueue.main.async {
+        guard let model = model,
+              let posterPath = model.posterPath else {
+            return
+        }
+        let url = APIConstants.imageBaseUrl + posterPath
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             self.movieImageView.kf.setImage(
                 with: URL(string: url),
                 placeholder: nil,
@@ -95,7 +100,7 @@ class HomeVcCollectionViewCell: BaseCollectionViewCell {
                     self.titleLabel.isHidden = true
                 case .failure(_):
                     self.titleLabel.isHidden = false
-                    self.titleLabel.text = model?.name
+                    self.titleLabel.text = model.name
                 }
             }
         }

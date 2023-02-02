@@ -8,15 +8,15 @@
 import Foundation
 import Alamofire
 
-class HomeViewModel {
+final class HomeViewModel {
     //MARK: - Properties
     var results: [Results] = []
-    private var page = 1
-    private var pageCount = 0
     var isFetchingData = false
     var isLastPage: Bool {
         page > pageCount
     }
+    private var page = 1
+    private var pageCount = 0
 
     //MARK: - Methods
     func fetchMovies(
