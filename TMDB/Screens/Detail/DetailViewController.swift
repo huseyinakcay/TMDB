@@ -11,6 +11,7 @@ final class DetailViewController: BaseVC {
     //MARK: - Properties
     var viewModel: DetailViewModel?
     private let constants = Constants.Detail.self
+    private var child: SpinnerViewController? = SpinnerViewController()
     
     //MARK: - UI Components
     lazy private var tableView: UITableView = {
@@ -74,17 +75,19 @@ final class DetailViewController: BaseVC {
 
     //MARK: - Methods
     private func fetchShowDetail() {
+        self.createSpinnerView()
         viewModel?.fetchShowDetail { [weak self] in
             guard let self = self else { return }
+            self.removeSpinnerView()
             self.tableView.reloadData()
         } onFailure: { [weak self] (errorDescription, networkError) in
             guard let self = self else { return }
+            self.removeSpinnerView()
             self.showAlert(
-                title: commonError,
+                title: commonError.capitalized,
                 message: errorDescription ?? APIError.unknownError.errorDescription
             )
         }
-
     }
 }
 

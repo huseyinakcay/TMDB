@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    open func addAttribute(text: String = "", attText: String, color: UIColor, highletedFont: UIFont) {
+    public func addAttribute(text: String = "", attText: String, color: UIColor, highletedFont: UIFont) {
         var currentText = text
         if currentText == "" {
             currentText = self.text ?? ""

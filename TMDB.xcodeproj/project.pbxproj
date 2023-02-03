@@ -10,7 +10,8 @@
 		5B228EB1298C82D200460269 /* DetailVcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B228EB0298C82D200460269 /* DetailVcTableViewCell.swift */; };
 		5B228EB3298C834B00460269 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B228EB2298C834B00460269 /* BaseTableViewCell.swift */; };
 		5B228EB6298C843800460269 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B228EB5298C843800460269 /* UILabel+Extension.swift */; };
-		5B228EB8298CA77F00460269 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B228EB7298CA77F00460269 /* Spinner.swift */; };
+		5B228EB8298CA77F00460269 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B228EB7298CA77F00460269 /* SpinnerViewController.swift */; };
+		5B228EBA298CAC2100460269 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B228EB9298CAC2100460269 /* String+Extension.swift */; };
 		5B94FE0A298AAF4D0078FD05 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE09298AAF4D0078FD05 /* HomeViewController.swift */; };
 		5B94FE0F298AAFBC0078FD05 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE0E298AAFBC0078FD05 /* DetailViewController.swift */; };
 		5B94FE13298AAFD30078FD05 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94FE12298AAFD30078FD05 /* HomeViewModel.swift */; };
@@ -40,7 +41,8 @@
 		5B228EB0298C82D200460269 /* DetailVcTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVcTableViewCell.swift; sourceTree = "<group>"; };
 		5B228EB2298C834B00460269 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		5B228EB5298C843800460269 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		5B228EB7298CA77F00460269 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		5B228EB7298CA77F00460269 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		5B228EB9298CAC2100460269 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5B94FE09298AAF4D0078FD05 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5B94FE0E298AAFBC0078FD05 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B94FE12298AAFD30078FD05 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -99,13 +101,23 @@
 			isa = PBXGroup;
 			children = (
 				5B228EB5298C843800460269 /* UILabel+Extension.swift */,
+				5B228EB9298CAC2100460269 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B228EBB298CADAF00460269 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5B228EB7298CA77F00460269 /* SpinnerViewController.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		5B94FE03298AAD570078FD05 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5B228EBB298CADAF00460269 /* Helper */,
 				5B94FE26298AEB300078FD05 /* Splash */,
 				5B94FE07298AAF160078FD05 /* Home */,
 				5B94FE08298AAF290078FD05 /* Detail */,
@@ -130,7 +142,6 @@
 				5B94FE29298AEDE10078FD05 /* Base */,
 				5B94FE24298AE9310078FD05 /* Reachability.swift */,
 				5B94FE2C298AEF7E0078FD05 /* Constants.swift */,
-				5B228EB7298CA77F00460269 /* Spinner.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -382,7 +393,8 @@
 				5B228EB3298C834B00460269 /* BaseTableViewCell.swift in Sources */,
 				5B94FE32298B328F0078FD05 /* BaseCollectionViewCell.swift in Sources */,
 				5B228EB1298C82D200460269 /* DetailVcTableViewCell.swift in Sources */,
-				5B228EB8298CA77F00460269 /* Spinner.swift in Sources */,
+				5B228EB8298CA77F00460269 /* SpinnerViewController.swift in Sources */,
+				5B228EBA298CAC2100460269 /* String+Extension.swift in Sources */,
 				5B94FE2B298AEDED0078FD05 /* BaseVC.swift in Sources */,
 				5B94FE21298AE7430078FD05 /* APIService.swift in Sources */,
 				5B94FE28298AEB580078FD05 /* SplashViewController.swift in Sources */,
@@ -460,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -514,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -539,6 +551,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,6 +580,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

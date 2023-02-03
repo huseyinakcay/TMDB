@@ -93,7 +93,7 @@ final class HomeViewController: BaseVC {
         } onFailure: { [weak self] (errorDescription, networkError) in
             guard let self = self else { return }
             self.showAlert(
-                title: commonError,
+                title: commonError.capitalized,
                 message: errorDescription ?? APIError.unknownError.errorDescription
             )
         }
@@ -125,28 +125,23 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 //MARK: - UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegate {
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
         guard let navigationController = navigationController,
-              let viewModel = viewModel else { return }
-        let item = collectionView.cellForItem(at: indexPath) as! HomeVcCollectionViewCell
+              let viewModel = viewModel,
+              let item = collectionView.cellForItem(at: indexPath) as? HomeVcCollectionViewCell else {
+            return
+        }
         let posterImage = item.getImage()
-        let detailVm = DetailViewModel(mainModel: viewModel.results[indexPath.item], posterImage: posterImage!)
+        let detailVm = DetailViewModel(
+            mainModel: viewModel.results[indexPath.item],
+            posterImage: (posterImage ?? Images.splashLogo.image)!
+        )
         let detailVc = DetailViewController(viewModel: detailVm)
         navigationController.pushViewController(detailVc, animated: true)
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
-        let width: CGFloat = (UIScreen.main.bounds.width - spacing * 3) / 2
-        let height: CGFloat = width * 1.5
-        return CGSize(width: width, height: height)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -159,5 +154,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
                 self.fetchMovies()
             }
         }
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        let width: CGFloat = (UIScreen.main.bounds.width - spacing * 3) / 2
+        let height: CGFloat = width * 1.5
+        return CGSize(width: width, height: height)
     }
 }

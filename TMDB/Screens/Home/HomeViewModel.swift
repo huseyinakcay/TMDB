@@ -31,7 +31,7 @@ final class HomeViewModel {
             ) { (response: PopularShowsResponseModel?, error: String?) in
                 guard let response = response,
                       let results = response.results else {
-                    onFailure(commonError, .unknownError)
+                    onFailure(commonError.capitalized, .unknownError)
                     return
                 }
                 self.response = response

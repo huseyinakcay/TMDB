@@ -8,7 +8,7 @@
 import UIKit
 
 public let commonFont = "Baskerville"
-public let commonError = "Error"
+public let commonError = "error"
 public let commonOk = "OK"
 public let popular = "popular"
 public let language = "en-US"

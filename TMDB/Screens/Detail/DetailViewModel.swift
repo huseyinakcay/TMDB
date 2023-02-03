@@ -25,11 +25,12 @@ final class DetailViewModel {
         onSuccess: @escaping () -> Void,
         onFailure: @escaping (String?, APIError) -> Void
     ) {
+
         APIService.request(
             router: TvShowsEndpoint.showDetail(id: showId ?? "")
         ) { (response: ShowDetailResponseModel?, error: String?) in
             guard let response = response else {
-                onFailure(commonError, .unknownError)
+                onFailure(commonError.capitalized, .unknownError)
                 return
             }
             self.model = response

@@ -52,13 +52,15 @@ class APIService {
         onSuccess: @escaping (T, String?) -> Void,
         onFailure: @escaping (String?, APIError
         ) -> Void) {
+#if DEBUG
         printLog(response: response)
+#endif
         guard let jsonString = String(
             bytes: response.data ?? Data(),
             encoding: .utf8
         ) else { return }
         let dict = jsonString.convertToDictionary()
-        let consumerErrorMessage = dict?["error"] as? String
+        let consumerErrorMessage = dict?[commonError] as? String
 
         switch response.result {
         case let .success(baseData):
@@ -84,17 +86,5 @@ class APIService {
         debugPrint(response)
         print("🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐🌐")
         print("\n\n\n")
-    }
-}
-
-extension String {
-    func convertToDictionary() -> [String: Any]? {
-        if let data = data(using: .utf8) {
-            return try? JSONSerialization.jsonObject(
-                with: data,
-                options: []
-            ) as? [String: Any]
-        }
-        return nil
     }
 }

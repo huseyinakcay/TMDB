@@ -86,7 +86,7 @@ class SplashViewController: BaseVC {
             navigateToHome()
         } else {
             showAlert(
-                title: commonError,
+                title: commonError.capitalized,
                 message: APIError.noConnection.errorDescription
             ) {
                 self.checkConnection()

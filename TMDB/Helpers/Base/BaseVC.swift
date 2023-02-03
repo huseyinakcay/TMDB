@@ -9,6 +9,13 @@ import UIKit
 
 class BaseVC: UIViewController {
 
+#if DEBUG
+    deinit {
+        print("OS reclaiming memory for: \(self.classForCoder)")
+    }
+#endif
+    private var spinner: SpinnerViewController? = SpinnerViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +47,24 @@ class BaseVC: UIViewController {
                 animated: true
             )
         }
+    }
+
+    final func createSpinnerView() {
+        guard let spinner = spinner else {
+            return
+        }
+        addChild(spinner)
+        spinner.view.frame = view.frame
+        view.addSubview(spinner.view)
+        spinner.didMove(toParent: self)
+    }
+
+    final func removeSpinnerView() {
+        guard let spinner = spinner else { return }
+        spinner.willMove(toParent: nil)
+        spinner.view.removeFromSuperview()
+        spinner.removeFromParent()
+        self.spinner = nil
     }
 
     func setupViews() {}
