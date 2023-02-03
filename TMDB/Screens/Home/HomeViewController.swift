@@ -56,8 +56,13 @@ final class HomeViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureNavBar()
         fetchMovies()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        configureNavBar()
     }
 
     //MARK: - Configure UI
@@ -72,7 +77,7 @@ final class HomeViewController: BaseVC {
     }
 
     private func configureNavBar() {
-        title = constants.home
+        navigationController?.navigationBar.isHidden = true
     }
 
     //MARK: - Methods
@@ -92,7 +97,6 @@ final class HomeViewController: BaseVC {
                 message: errorDescription ?? APIError.unknownError.errorDescription
             )
         }
-
     }
 }
 
@@ -126,10 +130,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        guard let navigationController = navigationController else {
-            return
-        }
-        let detailVc = DetailViewController()
+        guard let navigationController = navigationController,
+              let viewModel = viewModel else { return }
+        let item = collectionView.cellForItem(at: indexPath) as! HomeVcCollectionViewCell
+        let posterImage = item.getImage()
+        let detailVm = DetailViewModel(mainModel: viewModel.results[indexPath.item], posterImage: posterImage!)
+        let detailVc = DetailViewController(viewModel: detailVm)
         navigationController.pushViewController(detailVc, animated: true)
     }
 

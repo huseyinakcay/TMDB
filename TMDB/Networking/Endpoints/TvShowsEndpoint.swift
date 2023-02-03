@@ -21,7 +21,7 @@ enum TvShowsEndpoint: APIEndpoint {
         case .popularShows:
             return APIConstants.urlPath + popular
         case .showDetail(let id):
-            return id
+            return APIConstants.urlPath + id
         }
     }
 

@@ -10,6 +10,7 @@ import Alamofire
 
 final class HomeViewModel {
     //MARK: - Properties
+    var response: PopularShowsResponseModel?
     var results: [Results] = []
     var isFetchingData = false
     var isLastPage: Bool {
@@ -33,6 +34,7 @@ final class HomeViewModel {
                     onFailure(commonError, .unknownError)
                     return
                 }
+                self.response = response
                 let count = self.results.count
                 let newCount = count + results.count - 1
                 self.results += results
@@ -45,6 +47,5 @@ final class HomeViewModel {
                 onFailure(errorDescription, networkErrorType)
             }
         }
-
     }
 }

@@ -32,6 +32,14 @@ enum Constants {
     }
 
     enum Detail {
-
+        static let detail = "ABOUT SHOW"
+        static let detailTvCell = "DetailVcTableViewCell"
+        static let yes = "Yes"
+        static let no = "No"
+        static let firstEpisode = "First Episode:"
+        static let lastEpisode = "Last Episode:"
+        static let didItEnd = "Did it end?:"
+        static let genre = "Genre:"
+        static let creator = "Creator:"
     }
 }

@@ -157,10 +157,10 @@ final class HomeVcCollectionViewCell: BaseCollectionViewCell {
                 progressBlock: nil
             ) { result in
                 switch result {
-                case .success(_):
+                case .success:
                     self.titleLabel.isHidden = true
                     self.bottomTitleView.isHidden = false
-                case .failure(_):
+                case .failure:
                     self.titleLabel.isHidden = false
                     self.titleLabel.text = model.name
                     self.bottomTitleView.isHidden = true
@@ -168,5 +168,7 @@ final class HomeVcCollectionViewCell: BaseCollectionViewCell {
             }
         }
     }
+
+    func getImage() -> UIImage? { movieImageView.image }
     
 }
