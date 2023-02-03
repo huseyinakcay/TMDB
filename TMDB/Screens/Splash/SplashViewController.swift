@@ -43,10 +43,7 @@ class SplashViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Delay is not needed but i wanted to show splash for 1 sec.
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.checkConnection()
-//        }
+        checkConnection()
     }
 
     //MARK: - Configure UI
